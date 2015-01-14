@@ -51,3 +51,46 @@ pre code{
 	color: #404040;
 	padding: 0;
 }
+
+/**
+ * Icons
+ */
+.icon > svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle; 
+}
+.icon > svg path {
+	fill: #828282; 
+}
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 30px 0; 
+  text-align: center;
+}    
+/**
+ * Wrapper
+ */
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wrapper ul{
+  display: inline;
+}
+.wrapper ul li{
+  display: inline;
+  margin: 10px;
+}
+.trigger {
+    clear: both;
+    display: block; 
+    text-align: center;
+}
+
+.page-link {
+    display: block;
+    padding: 5px 10px; 
+}

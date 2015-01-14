@@ -2,7 +2,7 @@
 
 title: Introducing Jekyll Bootstrap
 layout: default
-categories: [CV, ML]
+categories: [Jekyll]
 
 ---
 

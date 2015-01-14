@@ -3,4 +3,11 @@ permalink: /:year/:title/
 paginate: 10
 exclude: []
 name: Notes on Computer Vision
-baseurl: ""
+baseurl: null
+
+#
+github_username:  shicai
+twitter_username: shicai
+weibo_username: 138147022
+
+markdown: kramdown
