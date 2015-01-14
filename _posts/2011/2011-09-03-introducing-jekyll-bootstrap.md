@@ -2,7 +2,7 @@
 
 title: Introducing Jekyll Bootstrap
 layout: default
-categories: [机器学习, 计算机视觉]
+categories: [CV, ML]
 
 ---
 
