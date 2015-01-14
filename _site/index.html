@@ -23,6 +23,12 @@
           
         
           
+          <a class="page-link" href="/category/">Category</a>
+          
+        
+          
+        
+          
         
       </div>
       <hr>
@@ -34,47 +40,46 @@
         
     <div class="span13 content">
 		<div class="page-header">
-		 <h3 class="title"><a href="/2011/introducing-jekyll-bootstrap/">Introducing Jekyll Bootstrap</a></h3>
+		 <h3 class="title"><a href="/2015/Jekyll-Install/">Jekyll安装指南</a></h3>
 		</div>
 		<div class="post_content">
 			
 				
-				<p>Jekyll bootstrap is a theme for jekyll which uses the <a href="https://github.com/twitter/bootstrap">twitter bootstrap css framework</a>.
-The advantage of jekyll is that it is self hosted (or hosted on github) and that you can write in markdown on a text editor and just git push new posts to a server which produces html files. The advantage of this theme is so that you can start blogging almost right away without having to worry about making a theme.</p>
+				<h3 id="ruby-installerdevkit">安装Ruby Installer和DevKit</h3>
 
-<h3 id="setting-up">Setting up</h3>
-<p>To start you own blog, simply <code>git clone</code> the <a href="https://github.com/nhoss2/jekyll-bootstrap">repository on github</a>. You could also press the “fork” button on github.</p>
+<p>从如下地址下载RubyInstaller 2.1.5，64位版本，并安装到<strong><em>D:\Ruby</em></strong></p>
 
-<pre><code>git clone git://github.com/nhoss2/jekyll-bootstrap.git
+<p><a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.1.5-x64.exe?direct" title="rubyinstaller-2.1.5-x64.exe">rubyinstaller-2.1.5-x64.exe</a></p>
+
+<p>同样网页下载64位Devkit：DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe，安装到<strong><em>D:\Ruby\Devkit</em></strong>，或CSDN上下载：</p>
+
+<p><a href="http://dldx.csdn.net/fd.php?i=997369170814104&amp;s=a5d7f1928ccd9fabc8dd3c9722c3ed77">DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe</a></p>
+
+<p>安装和配置：</p>
+
+<pre><code>cd D:\Ruby\DevKit
+ruby dk.rb init
+ruby dk.rb install
 </code></pre>
 
-<p>If you want to have your blog on github, make sure you change to the <code>gh-pages</code> branch.</p>
+<h3 id="jekyll">安装Jekyll</h3>
+<p>修改gem源，先删除原来的源，增加taobao的源（<em>http://ruby.taobao.org</em>，直接用ip）</p>
 
-<pre><code>git checkout gh-pages
+<pre><code>gem sources -r http://rubygems.org/
+gem sources -a http://223.6.253.37/
+gem install jekyll
+gem install rdiscount
+gem install redcarpet
 </code></pre>
 
-<p>Then you will need to edit the <code>_config.yml</code> file at the root of repository.</p>
+<h3 id="jekyll-1">运行Jekyll</h3>
 
-<p>To add your own posts, add a file to the <code>_posts</code> directory which has the name <code>year-month-day-title.md</code>. Note - the file does not have to markdown.</p>
-
-<p>To publish the post, just <code>git push</code> it to your own github repo and your set!</p>
-
-<h3 id="things-to-change-on-configyml">Things to change on <code>_config.yml</code></h3>
-<p>There is a config file at the root called <code>_config.yml</code>. By Default it looks like:</p>
-
-<pre><code>permalink: /:year/:title/
-paginate: 10
-exclude:
-name: Jekyll Bootstrap
-baseurl: /jekyll-bootstrap/
+<pre><code>jekyll new Blog
+cd Blog
+jekyll serve
 </code></pre>
 
-<p>You will need to change the <code>name</code> and <code>baseurl</code> fields. The others are optional.
-The <code>baseurl</code> field is used for the css files and pagination, if you are hosting the blog on github, you will need to change it to your repository name unless your repository is the same name as your github user name, which means you will need to have no value for <code>baseurl</code>.</p>
-
-<p>For more information on Jekyll, visit their <a href="https://github.com/mojombo/jekyll/wiki">wiki on github</a>.</p>
-
-<p>For more information on github pages: <a href="http://pages.github.com">http://pages.github.com</a>.</p>
+<p>打开，<a href="http://localhost:4000/">http://localhost:4000/</a>，就可以看见网页了。</p>
 
 				
 			
@@ -82,10 +87,16 @@ The <code>baseurl</code> field is used for the css files and pagination, if you 
     </div><!--content-->
 
 	<div class="span3 sidebar">
-		<h5>03 September 2011</h5>
+		<h5>13 January 2015</h5>
 		
 		<h6>jekyll</h6>
 		
+		<h7>
+		
+   		<span>#Jekyll</span>
+   		<span>#Ruby</span>
+   		<span>#Gem</span>
+		</h7>
 	</div>
 
     
@@ -93,7 +104,9 @@ The <code>baseurl</code> field is used for the css files and pagination, if you 
 	<div class="pagination" id="bottom_page">
 		<ul>
 			
-				<li><p>Page 1 of 1</p></li>
+				<li><p>Page 1 of 2</p></li>
+			
+				<li class="next"><a href="/page2">Next &rarr;</a></li>
 			
 		</ul>
 	</div>

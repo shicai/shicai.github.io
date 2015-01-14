@@ -37,6 +37,16 @@ header h1, header h1 a{
 	font-size: 14px;
 }
 
+.sidebar h7{
+	line-height: 18px;	
+	display: block;
+}
+.sidebar h7 span{
+	font-size: 12px;
+	display: block;
+	margin: 10px 0px;
+}
+
 #bottom_page ul p{
 	padding: 0 14px;
 	line-height: 34px;
@@ -85,12 +95,24 @@ pre code{
   margin: 10px;
 }
 .trigger {
-    clear: both;
-    display: block; 
-    text-align: center;
+  clear: both;
+  display: block; 
+  text-align: center;
 }
-
+.trigger a{
+  display: inline; 
+  margin-left: 10px;
+}
 .page-link {
-    display: block;
-    padding: 5px 10px; 
+  display: block;
+  padding: 5px 10px; 
+}
+.cat-list {
+  font-size: 14px;  
+}
+.cat-list li{
+  margin: 10px 10px;  
+}
+.cat-list li a{
+  margin-left: 20px;  
 }

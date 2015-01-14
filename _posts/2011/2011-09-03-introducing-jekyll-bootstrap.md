@@ -3,6 +3,7 @@
 title: Introducing Jekyll Bootstrap
 layout: default
 categories: [Jekyll]
+tags: [Jekyll]
 
 ---
 

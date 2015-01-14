@@ -20,4 +20,8 @@
 		{% for category in post.categories %}
 		<h6>{{ category }}</h6>
 		{% endfor %}
+		<h7>
+		{% for tag in post.tags %}
+   		<span>#{{ tag }}</span>{% endfor %}
+		</h7>
 	</div>
