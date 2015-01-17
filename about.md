@@ -7,5 +7,5 @@ This is Shicai, graduated from SEU.
 
 Here are some research notes on computer vision, machine learning and deep learning.
 
-Contact me:
-[weibo](http://weibo.com/138147022/ "Weibo")
+Please contact me via :
+[Weibo](http://weibo.com/shicaiyang/ "@星空下的巫师")
