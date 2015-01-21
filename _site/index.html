@@ -52,6 +52,7 @@
 
 <ul>
   <li><a href="#caffe">Caffe Model</a></li>
+  <li><a href="#zf">ZF Model</a></li>
   <li><a href="#vgg-16">VGG-16 Model</a></li>
 </ul>
 
@@ -182,6 +183,137 @@
       <td>1x1x1000</td>
       <td>(x - 323) / 32</td>
       <td>353</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="zf"></a></p>
+
+<h4 id="zeiler-fergus">Zeiler-Fergus</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer Name</th>
+      <th>Input Size</th>
+      <th>Filter Num</th>
+      <th>Filter Size</th>
+      <th>Stride(:Pad)</th>
+      <th>Output Size</th>
+      <th>RF Formula</th>
+      <th>RF Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>conv1</td>
+      <td>224x224x3</td>
+      <td>96</td>
+      <td>7x7</td>
+      <td>2:1</td>
+      <td>110x110x96</td>
+      <td>(x - 5)   / 2</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>pool1</td>
+      <td>110x110x96</td>
+      <td>96</td>
+      <td>3x3</td>
+      <td>2:1</td>
+      <td>55x55x96</td>
+      <td>(x - 7)   / 4</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>conv2</td>
+      <td>55x55x96</td>
+      <td>256</td>
+      <td>5x5</td>
+      <td>2</td>
+      <td>26x26x256</td>
+      <td>(x - 19)  / 8</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>pool2</td>
+      <td>26x26x256</td>
+      <td>256</td>
+      <td>3x3</td>
+      <td>2:1</td>
+      <td>13x13x256</td>
+      <td>(x - 27)  / 16</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td>conv3</td>
+      <td>13x13x256</td>
+      <td>384</td>
+      <td>3x3</td>
+      <td>1:1</td>
+      <td>13x13x384</td>
+      <td>(x - 59)  / 16</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>conv4</td>
+      <td>13x13x384</td>
+      <td>384</td>
+      <td>3x3</td>
+      <td>1:1</td>
+      <td>13x13x384</td>
+      <td>(x - 91)  / 16</td>
+      <td>107</td>
+    </tr>
+    <tr>
+      <td>conv5</td>
+      <td>13x13x384</td>
+      <td>256</td>
+      <td>3x3</td>
+      <td>1:1</td>
+      <td>13x13x256</td>
+      <td>(x - 123) / 16</td>
+      <td>139</td>
+    </tr>
+    <tr>
+      <td>pool5</td>
+      <td>13x13x256</td>
+      <td>256</td>
+      <td>3x3</td>
+      <td>2</td>
+      <td>6x6x256</td>
+      <td>(x - 139) / 32</td>
+      <td>171</td>
+    </tr>
+    <tr>
+      <td>fc6</td>
+      <td>6x6x256</td>
+      <td>4096</td>
+      <td>6x6</td>
+      <td>1</td>
+      <td>1x1x4096</td>
+      <td>(x - 299) / 32</td>
+      <td>331</td>
+    </tr>
+    <tr>
+      <td>fc7</td>
+      <td>1x1x4096</td>
+      <td>4096</td>
+      <td>1x1</td>
+      <td>1</td>
+      <td>1x1x4096</td>
+      <td>(x - 299) / 32</td>
+      <td>331</td>
+    </tr>
+    <tr>
+      <td>fc8</td>
+      <td>1x1x4096</td>
+      <td>1000</td>
+      <td>1x1</td>
+      <td>1</td>
+      <td>1x1x1000</td>
+      <td>(x - 299) / 32</td>
+      <td>331</td>
     </tr>
   </tbody>
 </table>

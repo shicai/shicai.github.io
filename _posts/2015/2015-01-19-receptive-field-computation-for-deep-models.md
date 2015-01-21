@@ -10,6 +10,7 @@ tags: [Deep Learning, Receptive Field, Caffe]
 Table of Contents:
 
 - [Caffe Model](#caffe)
+- [ZF Model](#zf)
 - [VGG-16 Model](#vgg-16)
 
 <a name='caffe'></a>
@@ -30,14 +31,30 @@ Layer Name | Input Size | Filter Num | Filter Size | Stride(:Pad) | Output Size 
  fc7   | 1x1x4096  | 4096| 1x1   | 1   | 1x1x4096  | (x - 323) / 32 | 353
  fc8   | 1x1x4096  | 1000| 1x1   | 1   | 1x1x1000  | (x - 323) / 32 | 353
  
+ <a name='zf'></a>
+
+#### Zeiler-Fergus
+
+Layer Name | Input Size | Filter Num | Filter Size | Stride(:Pad) | Output Size | RF Formula | RF Size
+ ----- | ---------- | --- | ---- | --- | ---------- | -------------- | --------------
+ conv1 | 224x224x3  | 96  | 7x7  | 2:1 | 110x110x96 | (x - 5)   / 2  | 7
+ pool1 | 110x110x96 | 96  | 3x3  | 2:1 | 55x55x96   | (x - 7)   / 4  | 11
+ conv2 | 55x55x96   | 256 | 5x5  | 2   | 26x26x256  | (x - 19)  / 8  | 27
+ pool2 | 26x26x256  | 256 | 3x3  | 2:1 | 13x13x256  | (x - 27)  / 16 | 43
+ conv3 | 13x13x256  | 384 | 3x3  | 1:1 | 13x13x384  | (x - 59)  / 16 | 75
+ conv4 | 13x13x384  | 384 | 3x3  | 1:1 | 13x13x384  | (x - 91)  / 16 | 107
+ conv5 | 13x13x384  | 256 | 3x3  | 1:1 | 13x13x256  | (x - 123) / 16 | 139
+ pool5 | 13x13x256  | 256 | 3x3  | 2   | 6x6x256    | (x - 139) / 32 | 171
+ fc6   | 6x6x256    | 4096| 6x6  | 1   | 1x1x4096   | (x - 299) / 32 | 331
+ fc7   | 1x1x4096   | 4096| 1x1  | 1   | 1x1x4096   | (x - 299) / 32 | 331
+ fc8   | 1x1x4096   | 1000| 1x1  | 1   | 1x1x1000   | (x - 299) / 32 | 331
  
 <a name='vgg-16'></a>
  
 #### VGG-16
- 
- 
+
 Layer Name | Input Size | Filter Num | Filter Size | Stride(:Pad) | Output Size | RF Formula | RF Size
- ------- | ---------- | --- | ----- | --- | ----------- | -------------- | --------------
+ ------- | ----------- | --- | ----- | --- | ----------- | -------------- | --------------
  conv1-1 | 224x224x3   | 64  | 3x3   | 1:1 | 224x224x64  | (x - 2)   / 1  | 3
  conv1-2 | 224x224x64  | 64  | 3x3   | 1:1 | 224x224x64  | (x - 4)   / 1  | 5
  pool1   | 224x224x64  | 64  | 2x2   | 2   | 112x112x64  | (x - 4)   / 2  | 6
