@@ -10,8 +10,6 @@
 <body>
 
 	
-		
-		
 
 	<header>
 	<h1><a href="/">Notes on Computer Vision</a></h1>
@@ -61,7 +59,6 @@
 <p>Use stochastic gradient descent to solve the loss functions.</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-
 \mathcal J(\mathbf w)=\frac{1}{N}\sum_{i=1}^N \max(0,  -y_i\mathbf w^T \mathbf x_i) 
 \\
 \mathcal J_i(\mathbf w)=max(0,  -y_i\mathbf w^T\mathbf x_i) 
@@ -75,14 +72,11 @@
 \begin{cases}
 0,  & \text{if $y_i\mathbf w^T\mathbf x_i>0$} \\
 -y_i\mathbf x_i, & \text{otherwise}
-\end{cases}
- %]]></script>
+\end{cases} %]]></script>
 
 <p>so we get the update rule:</p>
 
-<script type="math/tex; mode=display"> 
-\mathbf w = \mathbf w + y_i\mathbf x_i,   \;\text{if it is a mistake} 
-</script>
+<script type="math/tex; mode=display">\mathbf w = \mathbf w + y_i\mathbf x_i,   \;\text{if it is a mistake}</script>
 
 			
 		</div>
@@ -91,7 +85,7 @@
 	<div class="span3 sidebar">
 		<h5>13 March 2015</h5>
 		
-		<h6>machine learning</h6>
+		<h6>Machine Learning</h6>
 		
 		<h7>
 		

@@ -1,5 +1,6 @@
 # Jekyll
 permalink: /:year/:title/
+gems: [jekyll-paginate]
 paginate: 5
 exclude: []
 name: Notes on Computer Vision

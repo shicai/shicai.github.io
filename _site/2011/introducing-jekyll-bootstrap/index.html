@@ -10,8 +10,6 @@
 <body>
 
 	
-		
-		
 
 	<header>
 	<h1><a href="/">Notes on Computer Vision</a></h1>
@@ -51,34 +49,37 @@
 The advantage of jekyll is that it is self hosted (or hosted on github) and that you can write in markdown on a text editor and just git push new posts to a server which produces html files. The advantage of this theme is so that you can start blogging almost right away without having to worry about making a theme.</p>
 
 <h3 id="setting-up">Setting up</h3>
-<p>To start you own blog, simply <code>git clone</code> the <a href="https://github.com/nhoss2/jekyll-bootstrap">repository on github</a>. You could also press the “fork” button on github.</p>
+<p>To start you own blog, simply <code class="highlighter-rouge">git clone</code> the <a href="https://github.com/nhoss2/jekyll-bootstrap">repository on github</a>. You could also press the “fork” button on github.</p>
 
-<pre><code>git clone git://github.com/nhoss2/jekyll-bootstrap.git
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone git://github.com/nhoss2/jekyll-bootstrap.git
 </code></pre>
+</div>
 
-<p>If you want to have your blog on github, make sure you change to the <code>gh-pages</code> branch.</p>
+<p>If you want to have your blog on github, make sure you change to the <code class="highlighter-rouge">gh-pages</code> branch.</p>
 
-<pre><code>git checkout gh-pages
+<div class="highlighter-rouge"><pre class="highlight"><code>git checkout gh-pages
 </code></pre>
+</div>
 
-<p>Then you will need to edit the <code>_config.yml</code> file at the root of repository.</p>
+<p>Then you will need to edit the <code class="highlighter-rouge">_config.yml</code> file at the root of repository.</p>
 
-<p>To add your own posts, add a file to the <code>_posts</code> directory which has the name <code>year-month-day-title.md</code>. Note - the file does not have to markdown.</p>
+<p>To add your own posts, add a file to the <code class="highlighter-rouge">_posts</code> directory which has the name <code class="highlighter-rouge">year-month-day-title.md</code>. Note - the file does not have to markdown.</p>
 
-<p>To publish the post, just <code>git push</code> it to your own github repo and your set!</p>
+<p>To publish the post, just <code class="highlighter-rouge">git push</code> it to your own github repo and your set!</p>
 
-<h3 id="things-to-change-on-configyml">Things to change on <code>_config.yml</code></h3>
-<p>There is a config file at the root called <code>_config.yml</code>. By Default it looks like:</p>
+<h3 id="things-to-change-on-configyml">Things to change on <code class="highlighter-rouge">_config.yml</code></h3>
+<p>There is a config file at the root called <code class="highlighter-rouge">_config.yml</code>. By Default it looks like:</p>
 
-<pre><code>permalink: /:year/:title/
+<div class="highlighter-rouge"><pre class="highlight"><code>permalink: /:year/:title/
 paginate: 10
 exclude:
 name: Jekyll Bootstrap
 baseurl: /jekyll-bootstrap/
 </code></pre>
+</div>
 
-<p>You will need to change the <code>name</code> and <code>baseurl</code> fields. The others are optional.
-The <code>baseurl</code> field is used for the css files and pagination, if you are hosting the blog on github, you will need to change it to your repository name unless your repository is the same name as your github user name, which means you will need to have no value for <code>baseurl</code>.</p>
+<p>You will need to change the <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">baseurl</code> fields. The others are optional.
+The <code class="highlighter-rouge">baseurl</code> field is used for the css files and pagination, if you are hosting the blog on github, you will need to change it to your repository name unless your repository is the same name as your github user name, which means you will need to have no value for <code class="highlighter-rouge">baseurl</code>.</p>
 
 <p>For more information on Jekyll, visit their <a href="https://github.com/mojombo/jekyll/wiki">wiki on github</a>.</p>
 
@@ -91,7 +92,7 @@ The <code>baseurl</code> field is used for the css files and pagination, if you 
 	<div class="span3 sidebar">
 		<h5>03 September 2011</h5>
 		
-		<h6>jekyll</h6>
+		<h6>Jekyll</h6>
 		
 		<h7>
 		
