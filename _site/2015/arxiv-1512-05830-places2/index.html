@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Tags - Notes on Computer Vision</title>
+	<title>Learning Deep Convolutional Neural Networks for Places2 Scene Recognition - Notes on Computer Vision</title>
 
 	<link rel="stylesheet" href="/bootstrap.min.css">
 	<link rel="stylesheet" href="/css.css">
@@ -43,111 +43,35 @@
   
     <div class="span14 content">
 		<div class="page-header">
-		 <h3 class="title">Tags</h3>
+		 <h3 class="title">Learning Deep Convolutional Neural Networks for Places2 Scene Recognition</h3>
 		</div>
 		<div class="post_content">
 			
-			<div>
- 
-	<a name="Jekyll"></a><h3>Jekyll(2)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/01/13<a href="/2015/Jekyll-Install/">Jekyll安装指南</a></li>
-	
-		<li>2011/09/03<a href="/2011/introducing-jekyll-bootstrap/">Introducing Jekyll Bootstrap</a></li>
-	
-	</ul>
- 
-	<a name="Ruby"></a><h3>Ruby(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/01/13<a href="/2015/Jekyll-Install/">Jekyll安装指南</a></li>
-	
-	</ul>
- 
-	<a name="Gem"></a><h3>Gem(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/01/13<a href="/2015/Jekyll-Install/">Jekyll安装指南</a></li>
-	
-	</ul>
- 
-	<a name="Deep Learning"></a><h3>Deep Learning(2)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/12/21<a href="/2015/arxiv-1512-05830-places2/">Learning Deep Convolutional Neural Networks for Places2 Scene Recognition</a></li>
-	
-		<li>2015/01/19<a href="/2015/receptive-field-computation-for-deep-models%20-%20Copy/">Receptive Field Computation for Deep Models</a></li>
-	
-	</ul>
- 
-	<a name="Receptive Field"></a><h3>Receptive Field(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/01/19<a href="/2015/receptive-field-computation-for-deep-models%20-%20Copy/">Receptive Field Computation for Deep Models</a></li>
-	
-	</ul>
- 
-	<a name="Caffe"></a><h3>Caffe(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/01/19<a href="/2015/receptive-field-computation-for-deep-models%20-%20Copy/">Receptive Field Computation for Deep Models</a></li>
-	
-	</ul>
- 
-	<a name="Machine Learning"></a><h3>Machine Learning(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/03/13<a href="/2015/Perceptron/">Perceptron</a></li>
-	
-	</ul>
- 
-	<a name="Perceptron"></a><h3>Perceptron(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/03/13<a href="/2015/Perceptron/">Perceptron</a></li>
-	
-	</ul>
- 
-	<a name="Online Learning"></a><h3>Online Learning(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/03/13<a href="/2015/Perceptron/">Perceptron</a></li>
-	
-	</ul>
- 
-	<a name="CNN"></a><h3>CNN(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/12/21<a href="/2015/arxiv-1512-05830-places2/">Learning Deep Convolutional Neural Networks for Places2 Scene Recognition</a></li>
-	
-	</ul>
- 
-	<a name="Places2"></a><h3>Places2(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/12/21<a href="/2015/arxiv-1512-05830-places2/">Learning Deep Convolutional Neural Networks for Places2 Scene Recognition</a></li>
-	
-	</ul>
- 
-	<a name="Scene Recognition"></a><h3>Scene Recognition(1)</h3>
-	<ul class="cat-list">
-	
-		<li>2015/12/21<a href="/2015/arxiv-1512-05830-places2/">Learning Deep Convolutional Neural Networks for Places2 Scene Recognition</a></li>
-	
-	</ul>
+			<h3 id="introduction">Introduction</h3>
 
-</div>
+<p>论文描述了作者在ILSVRC 2015场景分类竞赛中夺冠所采用的模型结构和优化思想，主要包括以下几点：
+- （1）Relay BP；
+- （2）VGG+Inception+SPP；
+- （3）Class-aware Sampling。</p>
+
+<h3 id="relay-bp">Relay BP</h3>
+<p>CNN训练中经常遇到的梯度消失或者爆炸问题，已经可以通过Batch Normalization（BN）或者Auxiliary Classifiers（AC，来源于DSN论文）来解决。Relay BP的思想有点类似DSN，通过引入额外的辅助分类器来进行BP，不同的地方在于，DSN每个AC的Loss都会一层层反向传播到最底层，而Relay BP的每个AC只负责反向传播到一定层数（&lt;=N层）就停止，然后由另外一个AC接力，向底层反向传播误差，依此继续下去。两个相邻AC之间有重叠（比如重叠n层）。这里的N和n都是需要靠经验调整的。有重叠的层，就采用加权平均的方式计算梯度，没有重叠的层，就直接采用BP计算得到的梯度。这样，通过SGD就可以对整个网络进行求解。</p>
 
 			
 		</div>
     </div><!--content-->
 
 	<div class="span3 sidebar">
-		<h5></h5>
+		<h5>21 December 2015</h5>
+		
+		<h6>paper reading</h6>
 		
 		<h7>
 		
+   		<span>#Deep Learning</span>
+   		<span>#CNN</span>
+   		<span>#Places2</span>
+   		<span>#Scene Recognition</span>
 		</h7>
 	</div>
 
